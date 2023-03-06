@@ -1,9 +1,11 @@
+const path =require('path')
 const express = require('express');
 const router = express.Router()
+const rootDir = require('../helper/path')
 
 router.get('/',(req,res)=>{
-    //console.log("In the next Middleware") 
-    res.send('<h1>Hello From Express</h1>')
+   
+    res.sendFile(path.join(rootDir,'views','shop.html'))
 });
 
 module.exports = router
