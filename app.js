@@ -5,6 +5,8 @@ const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop')
 const contactRouter = require('./routes/contact')
 const successRouter = require('./routes/success')
+const errorpg =require('./controllers/error')
+
 const path =require('path')
 const rootDir= require('./helper/path')
 
@@ -17,8 +19,6 @@ app.use('/',contactRouter)
 app.use('/',successRouter)
 
 
-app.use((req,res,next)=>{
-    res.status(404).sendFile(path.join(rootDir,'views','pageerror.html'))
-})
+app.use(errorpg.errorPage)
 
 app.listen(3000)
