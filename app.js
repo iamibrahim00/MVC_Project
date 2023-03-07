@@ -9,11 +9,12 @@ const errorpg =require('./controllers/error')
 
 const path =require('path')
 const rootDir= require('./helper/path')
+app.set('view engine', 'ejs');
 
 app.use(bodyparser.urlencoded({extended:true}))
-
+app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname,'public')))
-app.use('/',adminRouter)
+app.use('/admin',adminRouter)
 app.use('/',shopRouter)
 app.use('/',contactRouter)
 app.use('/',successRouter)

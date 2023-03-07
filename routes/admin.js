@@ -5,9 +5,10 @@ const rootDir = require('../helper/path')
 const products=require('../controllers/products')
 
 // admin/add-product => GET
-router.get('/admin',products.getAddproducts);
+router.get('/add-product',products.getAddproducts);
 
 //admin/add-product => POST
-router.post("/admin/add-product",products.postAddproducts)
+router.post("/add-product",products.postAddproducts)
+
 
 module.exports = router

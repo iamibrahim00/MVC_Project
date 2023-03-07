@@ -8,4 +8,4 @@ const successControl = require('../controllers/success')
 router.get('/success',successControl.SuccessController);
 
 
-module.exports = router
+module.exports = router 
